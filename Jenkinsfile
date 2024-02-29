@@ -2,16 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('compile') {
+        stage('checkout') {
             steps {
-                echo 'Deploying...................................'
+                echo 'checkout...................................'
                 git 'https://github.com/shyamsundarvarma/ant.git'
-                sh 'ant compile'
+                
             }
         }
-        stage('Test') {
+        stage('compile') {
             steps {
-                echo 'Testing..............................'
+                echo 'compile..............................'
+                sh 'ant compile'
             }
         }
         stage('Deploy') {
