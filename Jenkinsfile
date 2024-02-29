@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('compile') {
             steps {
-                echo 'Building..'
+                ant compile
             }
         }
         stage('Test') {
