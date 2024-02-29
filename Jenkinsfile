@@ -4,17 +4,19 @@ pipeline {
     stages {
         stage('compile') {
             steps {
-               sh 'ant compile'
+                echo 'Deploying...................................'
+                git 'https://github.com/shyamsundarvarma/ant.git'
+                sh 'ant compile'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing..............................'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...................................'
             }
         }
     }
